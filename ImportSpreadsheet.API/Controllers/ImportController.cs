@@ -18,8 +18,8 @@ namespace ImportSpreadsheet.API.Controllers
         {
             this.applicationServiceImport = applicationServiceImport;
         }
-        // GET api/values
-        [HttpGet]
+
+        [HttpPost]
         public object ImportSpredSheet(string directory)
         {
             return Ok(applicationServiceImport.ImportSpredSheet(directory));

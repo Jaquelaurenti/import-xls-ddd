@@ -12,6 +12,6 @@ namespace ImportSpreadsheet.Application.Dtos
         public string Cargo { get; set; }
         public string PerguntaAtual { get; set; }
         public string PerguntaNova { get; set; }
-        public string Errors { get; set; }
+        public string Error { get; set; }
     }
 }

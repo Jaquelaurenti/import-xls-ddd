@@ -112,7 +112,7 @@ namespace ImportSpreadsheet.Application
 
                         }
 
-                        SpreadSheetClass[nCount].Errors = LogErro;
+                        SpreadSheetClass[nCount].Error = LogErro;
 
                     }
                     nCount++;
@@ -129,17 +129,18 @@ namespace ImportSpreadsheet.Application
                         Logs.Add(new LogsDTO
                         { });
 
-                        if (!string.IsNullOrEmpty(InsertSheet.Errors))
+                        // se estiver com alguem erro, vai inserir no log sem parar os demais 
+                        if (!string.IsNullOrEmpty(InsertSheet.Error))
                         {
                             Logs[j].Pergunta = InsertSheet.PerguntaAtual;
                             Logs[j].Status = "Não importado!";
                             Logs[j].Error = "Motivo do Erro";
-
-
                         }
                         else
                         {
-                            // crio os inserts 
+                            Logs[j].Pergunta = InsertSheet.PerguntaAtual;
+                            Logs[j].Status = "Importado!";
+                            Logs[j].Error = string.Empty;
                         }
                         j++;
                     }
